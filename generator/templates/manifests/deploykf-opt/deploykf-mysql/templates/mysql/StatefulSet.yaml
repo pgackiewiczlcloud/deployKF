@@ -62,7 +62,7 @@ spec:
             runAsGroup: {{ .Values.mysql.image.gid }}
           {{- if .Values.mysql.resources }}
           resources:
-            {{- toYaml .Values.mysql.resources | toYaml | nindent 12 }}
+            {{- .Values.mysql.resources | toYaml | nindent 12 }}
           {{- end }}
           env:
             - name: MYSQL_ROOT_HOST
